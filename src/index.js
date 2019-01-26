@@ -1,10 +1,10 @@
 import {
-  renderReactToNode,
+  renderReact2Node,
   getPropsFromNode,
   sendPropsToReact
 } from "./prop-bridge";
 
-const getCustomElementFromReactComponent = Component => {
+const getCustomElementFromReactComponent = RComponent => {
   return class ReactAsCustomElement extends HTMLElement {
     shadow = null;
     propBridgeRef = null;
@@ -16,7 +16,7 @@ const getCustomElementFromReactComponent = Component => {
       this.props = getPropsFromNode(this);
       this.observer = new MutationObserver(this._onMutation);
       this.shadow = this.attachShadow({ mode: "closed" });
-      renderReactToNode(Component, this.props, this.shadow, this._onReactMount);
+      renderReact2Node(RComponent, this.props, this.shadow, this._onReactMount);
     }
 
     setProps = newProps => {

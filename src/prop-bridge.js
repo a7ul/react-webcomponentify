@@ -9,8 +9,8 @@ Hence when you call setProps you are calling setState
 and then passing those as props to the react component.
 */
 
-export const renderReactToNode = (
-  Component,
+export const renderReact2Node = (
+  RComponent,
   initialProps,
   targetDomNode,
   onRender
@@ -19,7 +19,7 @@ export const renderReactToNode = (
     state = { ...initialProps };
     setProps = props => this.setState(() => props);
     render() {
-      return <Component {...this.props} {...this.state} />;
+      return <RComponent {...this.props} {...this.state} />;
     }
   }
   const propBridgeRef = React.createRef();
