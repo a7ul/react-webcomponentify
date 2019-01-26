@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/master-atul/react-webcomponentify/issues"
   },
-  "homepage": "https://github.com/master-atul/react-webcomponentify#readme"
+  "homepage": "https://github.com/master-atul/react-webcomponentify#readme",
+  "dependencies": {
+    "child-replace-with-polyfill": "^1.0.1"
+  }
 }
