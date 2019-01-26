@@ -24,7 +24,7 @@ export const ExampleReactComponent = () => {
   return <div> Hello </div>;
 };
 
-registerAsWebComponent("example-component", ExampleReactComponent);
+registerAsWebComponent(ExampleReactComponent, "example-component");
 ```
 
 In HTML:

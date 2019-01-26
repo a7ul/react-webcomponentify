@@ -37,5 +37,9 @@
     "babel-loader": "^8.0.5",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   }
 }

@@ -2,11 +2,13 @@ var path = require("path");
 
 module.exports = {
   entry: "./src/index.js",
+  mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "build.js",
-    library: "webcomponentify"
+    libraryTarget: "commonjs2"
   },
+  devtool: "none",
   module: {
     rules: [
       {

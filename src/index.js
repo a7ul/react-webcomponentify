@@ -56,7 +56,7 @@ const getCustomElementFromReactComponent = Component => {
   };
 };
 
-export const registerAsWebComponent = (customElementName, Component) => {
-  const ReactCustomElement = getCustomElementFromReactComponent(Component);
+export const registerAsWebComponent = (component, customElementName) => {
+  const ReactCustomElement = getCustomElementFromReactComponent(component);
   customElements.define(customElementName, ReactCustomElement);
 };
