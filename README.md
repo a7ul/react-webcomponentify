@@ -16,6 +16,8 @@ yarn add react-webcomponentify
 
 # Usage
 
+**Basic**
+
 ```js
 import React from "react";
 import { registerAsWebComponent } from "react-webcomponentify";
@@ -40,5 +42,50 @@ In HTML:
 </html>
 ```
 
+**Advanced**
 
-# More examples and scenarios coming soon...
+```js
+import React from "react";
+import { registerAsWebComponent } from "react-webcomponentify";
+
+export const ButtonComponent = props => {
+  return (
+    <div>
+      Hello <button onClick={props.onClick}>{props.text}</button>
+    </div>
+  );
+};
+
+registerAsWebComponent(ButtonComponent, "button-web");
+```
+
+In HTML:
+
+```html
+<!DOCTYPE html>
+<html>
+  ....
+  <body>
+    <button-web text="click me" id="mybutton" />
+  </body>
+  ....
+  <script>
+    const myBtn = document.getElementById("mybutton");
+    myBtn.setProps({
+      onClick: () => console.log("btn was clicked")
+    });
+  </script>
+</html>
+```
+
+Every custom component built using react-webcomponentify will have an instance method `setProps`
+
+```js
+element.setProps({
+  ....
+  /* set the props here that you want to send to react */
+  ....
+})
+```
+
+# More detailed examples and scenarios coming soon...
