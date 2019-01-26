@@ -4,8 +4,8 @@ import {
   sendPropsToReact
 } from "./prop-bridge";
 
-export const registerAsWebComponent = (Component, customElementName) => {
-  class ReactAsCustomElement extends HTMLElement {
+const getCustomElementFromReactComponent = Component => {
+  return class ReactAsCustomElement extends HTMLElement {
     shadow = null;
     propBridgeRef = null;
     props = {};
@@ -53,7 +53,10 @@ export const registerAsWebComponent = (Component, customElementName) => {
     disconnectedCallback() {
       this.observer.disconnect();
     }
-  }
+  };
+};
 
-  customElements.define(customElementName, ReactAsCustomElement);
+export const registerAsWebComponent = (customElementName, Component) => {
+  const ReactCustomElement = getCustomElementFromReactComponent(Component);
+  customElements.define(customElementName, ReactCustomElement);
 };
