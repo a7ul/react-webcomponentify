@@ -1,0 +1,27 @@
+{
+  "name": "react-webcomponentify",
+  "version": "1.0.1",
+  "description": "Build and export React Components as Web Components without any extra effort.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/master-atul/react-webcomponentify.git"
+  },
+  "keywords": [
+    "react",
+    "web",
+    "component",
+    "export",
+    "web-component",
+    "javascript"
+  ],
+  "author": "atulanand94@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/master-atul/react-webcomponentify/issues"
+  },
+  "homepage": "https://github.com/master-atul/react-webcomponentify#readme"
+}
