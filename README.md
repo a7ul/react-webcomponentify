@@ -11,12 +11,12 @@ _\* works nicely with preact aswell: See demo_
 ## Show me live demo?
 
 - Demo Link: https://www.atulr.com/webcomponents-with-react-webcomponentify/
-- Demo source code: https://github.com/master-atul/webcomponents-with-react-webcomponentify
+- Demo source code (recommended): https://github.com/master-atul/webcomponents-with-react-webcomponentify
 
 # Use cases
 
-- Export existing react components as web components so you can use them with Vue or Angular.
-- Use rich react api to build web components with state management, etc [Live Demo](https://www.atulr.com/webcomponents-with-react-webcomponentify/)
+- **Export existing react components as web components** so you can use them with Vue or Angular.
+- **Use react's rich api to build web components** with state management, etc. Instruction on how to do exactly that and Live Demo here: https://github.com/master-atul/webcomponents-with-react-webcomponentify
 - Lets say you are writing a component library with web components but you already have a huge collection of component in react.You can use this library to generate a component library with the existing components. And then safely continue to rewrite each one of them behind the scene. This makes sure other teams are not waiting for you to finish.
 - For more crazy people - You can even export your entire react app as a web component and embed it into another app made with Angular or Vue. So you can keep writing newer parts of code in react while keeping your legacy code working on the side.
 - Maybe (not tried) you can embed another old react app (wrapped with this module) inside ur current react app.
