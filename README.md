@@ -6,6 +6,10 @@ Build and export React Components as Web Components without any extra effort.
 
 Size = ~3kb after gzip
 
+## Show me live demo?
+- Demo Link: https://www.atulr.com/webcomponents-with-react-webcomponentify/
+- Demo source code: https://github.com/master-atul/webcomponents-with-react-webcomponentify
+
 # Use cases
 
 - Export existing react components as web components so you can use them with Vue or Angular.
