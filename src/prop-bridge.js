@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import React from "react";
 import { ReactDomChild } from "./react-dom-child";
+import createRef from "react-create-ref";
 
 /*
 PropBridge stores props passed to it via setProps in the state.
@@ -22,7 +23,7 @@ export const renderReact2Node = (
       return <RComponent {...this.props} {...this.state} />;
     }
   }
-  const propBridgeRef = React.createRef();
+  const propBridgeRef = createRef();
   ReactDOM.render(<PropBridge ref={propBridgeRef} />, targetDomNode, () =>
     onRender(propBridgeRef)
   );
