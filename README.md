@@ -1,5 +1,7 @@
 # react-webcomponentify
 
+<img src="https://github.com/master-atul/react-webcomponentify/blob/master/assets/react-webcomponent.png" width="200" height="auto" alt="logo" style="display:block; margin:0 auto;"/>
+
 Build and export React Components as Web Components without any extra effort.
 
 Size = ~3kb after gzip
