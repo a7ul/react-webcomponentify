@@ -1,6 +1,6 @@
 {
   "name": "react-webcomponentify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Build and export React Components as Web Components without any extra effort.",
   "main": "dist/build.js",
   "scripts": {
