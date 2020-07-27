@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/react-webcomponentify.svg)](https://badge.fury.io/js/react-webcomponentify)
 
-<img src="https://github.com/master-atul/react-webcomponentify/blob/master/assets/react-webcomponent.png" width="200" height="auto" alt="logo" style="display:block; margin:0 auto;"/>
+<img src="https://github.com/a7ul/react-webcomponentify/blob/master/assets/react-webcomponent.png" width="200" height="auto" alt="logo" style="display:block; margin:0 auto;"/>
 
 **Build and export React Components as Web Components without any extra effort.**
 
@@ -12,13 +12,13 @@ _\* works nicely with preact aswell: See demo_
 
 ## Show me live demo?
 
-- Demo Link: https://www.atulr.com/webcomponents-with-react-webcomponentify/
-- Demo source code (recommended): https://github.com/master-atul/webcomponents-with-react-webcomponentify
+- Demo Link: https://a7ul.github.io/webcomponents-with-react-webcomponentify/
+- Demo source code (recommended): https://github.com/a7ul/webcomponents-with-react-webcomponentify
 
 # Use cases
 
 - **Export existing react components as web components** so you can use them with Vue or Angular.
-- **Use react's rich api to build web components** with state management, etc. Instruction on how to do exactly that and Live Demo here: https://github.com/master-atul/webcomponents-with-react-webcomponentify
+- **Use react's rich api to build web components** with state management, etc. Instruction on how to do exactly that and Live Demo here: https://github.com/a7ul/webcomponents-with-react-webcomponentify
 - Lets say you are writing a component library with web components but you already have a huge collection of component in react.You can use this library to generate a component library with the existing components. And then safely continue to rewrite each one of them behind the scene. This makes sure other teams are not waiting for you to finish.
 - For more crazy people - You can even export your entire react app as a web component and embed it into another app made with Angular or Vue. So you can keep writing newer parts of code in react while keeping your legacy code working on the side.
 - Maybe (not tried) you can embed another old react app (wrapped with this module) inside ur current react app.
@@ -153,7 +153,7 @@ In HTML:
 ```
 
 This will send `<p>Some Child</p>` via this.props.children to the React component `ComponentWithChild`.
-Note that `<p>Some Child</p>` is a dom node and not a react component. So it will be wrapped with a simple react component found here: https://github.com/master-atul/react-webcomponentify/blob/master/src/react-dom-child.js
+Note that `<p>Some Child</p>` is a dom node and not a react component. So it will be wrapped with a simple react component found here: https://github.com/a7ul/react-webcomponentify/blob/master/src/react-dom-child.js
 But for implementation purposed use it like a regular child component.
 
 # TODO
