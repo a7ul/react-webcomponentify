@@ -8,7 +8,7 @@ import createRef from "react-create-ref";
 export class ReactDomChild extends React.Component {
   ref = createRef();
   componentDidMount() {
-    const childNodes = this.props.children[0];
+    const childNodes = this.props.children;
     this.ref.current.replaceWith(...childNodes);
   }
   render() {
