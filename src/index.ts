@@ -1,15 +1,21 @@
+import React from 'react';
 import {
   renderReact2Node,
   getPropsFromNode,
-  sendPropsToReact
-} from "./prop-bridge";
+  sendPropsToReact,
+} from './prop-bridge';
 
-const getCustomElementFromReactComponent = (RComponent, mode) => {
+type Mode = 'open' | 'element';
+
+const getCustomElementFromReactComponent = (
+  RComponent: React.ElementType,
+  mode?: Mode
+) => {
   return class ReactAsCustomElement extends HTMLElement {
-    targetNode = null;
-    propBridgeRef = null;
+    targetNode: this | ShadowRoot = null;
+    propBridgeRef: any = null;
     props = {};
-    observer = null;
+    observer: MutationObserver = null;
 
     constructor() {
       super();
@@ -28,27 +34,38 @@ const getCustomElementFromReactComponent = (RComponent, mode) => {
           break;
       }
 
-      renderReact2Node(RComponent, this.props, this.targetNode, this._onReactMount);
+      renderReact2Node(
+        RComponent,
+        this.props,
+        this.targetNode,
+        this._onReactMount
+      );
     }
 
-    setProps = newProps => {
+    setProps = (newProps: {}) => {
       this.props = { ...this.props, ...newProps };
       sendPropsToReact(this.propBridgeRef, this.props);
     };
 
-    _onReactMount = propBridgeRef => {
+    _onReactMount = (propBridgeRef: React.RefObject<any>) => {
       this.propBridgeRef = propBridgeRef;
       this.setProps(this.props);
     };
 
-    _onMutation = mutationsList => {
-      const newProps = mutationsList.reduce((props, mutation) => {
-        if (mutation.type === "attributes") {
-          const propKey = mutation.attributeName;
-          props[propKey] = this.getAttribute(propKey);
-        }
-        return props;
-      }, {});
+    _onMutation = (mutationsList: any[]) => {
+      const newProps = mutationsList.reduce(
+        (
+          props: { [x: string]: string },
+          mutation: { type: string; attributeName: string }
+        ) => {
+          if (mutation.type === 'attributes') {
+            const propKey = mutation.attributeName;
+            props[propKey] = this.getAttribute(propKey);
+          }
+          return props;
+        },
+        {}
+      );
       this.setProps(newProps);
     };
     /*
@@ -73,7 +90,11 @@ const getCustomElementFromReactComponent = (RComponent, mode) => {
   - "open" - open shadow DOM
   - "element" - no shadow DOM
 */
-export const registerAsWebComponent = (component, customElementName, mode) => {
+export const registerAsWebComponent = (
+  component: React.ElementType,
+  customElementName: string,
+  mode?: Mode
+) => {
   const ReactCustomElement = getCustomElementFromReactComponent(
     component,
     mode

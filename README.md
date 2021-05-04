@@ -159,5 +159,5 @@ But for implementation purposed use it like a regular child component.
 # TODO
 
 - ~Live Demos~
-- Maybe Typescript this?
+- ~Maybe Typescript this?~
 - Test cases
