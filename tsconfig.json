@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "declaration": true,
+        "noImplicitAny": true,
+        "module": "es6",
+        "sourceMap": true,
+        "target": "es6",
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react",
+        "typeRoots": [
+            "node_modules/@types",
+            "src/types"
+        ],
+        "lib": [
+            "ES2017",
+            "DOM"
+        ]
+    }
+}
