@@ -41,6 +41,8 @@ export const getPropsFromNode = node => {
     props[name] = node.getAttribute(name);
     return props;
   }, {});
-  mappedProps.children = <ReactDomChild>{node.children}</ReactDomChild>;
+
+  const children = Array.from(node.children).map((e) => e.cloneNode(true));
+  mappedProps.children = <ReactDomChild>{children}</ReactDomChild>;
   return mappedProps;
 };

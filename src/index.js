@@ -4,9 +4,9 @@ import {
   sendPropsToReact
 } from "./prop-bridge";
 
-const getCustomElementFromReactComponent = RComponent => {
+const getCustomElementFromReactComponent = (RComponent, mode) => {
   return class ReactAsCustomElement extends HTMLElement {
-    shadow = null;
+    targetNode = null;
     propBridgeRef = null;
     props = {};
     observer = null;
@@ -15,8 +15,20 @@ const getCustomElementFromReactComponent = RComponent => {
       super();
       this.props = getPropsFromNode(this);
       this.observer = new MutationObserver(this._onMutation);
-      this.shadow = this.attachShadow({ mode: "closed" });
-      renderReact2Node(RComponent, this.props, this.shadow, this._onReactMount);
+
+      switch (mode) {
+        case 'open':
+          this.targetNode = this.attachShadow({ mode: 'open' });
+          break;
+        case 'element':
+          this.targetNode = this;
+          break;
+        default:
+          this.targetNode = this.attachShadow({ mode: 'closed' });
+          break;
+      }
+
+      renderReact2Node(RComponent, this.props, this.targetNode, this._onReactMount);
     }
 
     setProps = newProps => {
@@ -56,7 +68,15 @@ const getCustomElementFromReactComponent = RComponent => {
   };
 };
 
-export const registerAsWebComponent = (component, customElementName) => {
-  const ReactCustomElement = getCustomElementFromReactComponent(component);
+/* mode options:
+  - no option (default) - closed shadow DOM
+  - "open" - open shadow DOM
+  - "element" - no shadow DOM
+*/
+export const registerAsWebComponent = (component, customElementName, mode) => {
+  const ReactCustomElement = getCustomElementFromReactComponent(
+    component,
+    mode
+  );
   customElements.define(customElementName, ReactCustomElement);
 };
