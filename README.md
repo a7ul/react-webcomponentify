@@ -156,8 +156,13 @@ This will send `<p>Some Child</p>` via this.props.children to the React componen
 Note that `<p>Some Child</p>` is a dom node and not a react component. So it will be wrapped with a simple react component found here: https://github.com/a7ul/react-webcomponentify/blob/master/src/react-dom-child.js
 But for implementation purposed use it like a regular child component.
 
-# TODO
+# Maintainers
 
-- ~Live Demos~
-- ~Maybe Typescript this?~
-- Test cases
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/a7ul"><img src="https://avatars.githubusercontent.com/u/4029423?v=4" width="100px;" alt=""/><br /><sub><b>Atul R</b></sub></a></td>
+    <td align="center"><a href="https://github.com/kopach"><img src="https://avatars.githubusercontent.com/u/8749624?v=4" width="100px;" alt=""/><br /><sub><b>
+Ihor</b></sub></a></td>
+    </tr>
+  
+</table>
