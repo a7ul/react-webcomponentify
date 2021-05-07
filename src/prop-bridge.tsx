@@ -49,7 +49,7 @@ export const getPropsFromNode = (node: HTMLElement) => {
     {}
   );
 
-  const children = Array.from(node.children).map((e) => e.cloneNode(true));
+  const children = Array.from(node.childNodes).map((e) => e.cloneNode(true));
   mappedProps.children = <ReactDomChild>{children}</ReactDomChild>;
   return mappedProps;
 };
