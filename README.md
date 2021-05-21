@@ -24,6 +24,7 @@ _\* works nicely with preact aswell: See demo_
   - [Advanced](#advanced)
     - [Sending non string props to react](#sending-non-string-props-to-react)
     - [What about child elements?](#what-about-child-elements)
+  - [TypeScript support](#typescript-support)
 - [Maintainers](#maintainers)
 
 ## Use cases
@@ -166,6 +167,10 @@ In HTML:
 This will send `<p>Some Child</p>` via this.props.children to the React component `ComponentWithChild`.
 Note that `<p>Some Child</p>` is a dom node and not a react component. So it will be wrapped with a simple react component found here: https://github.com/a7ul/react-webcomponentify/blob/master/src/react-dom-child.js
 But for implementation purposed use it like a regular child component.
+
+### TypeScript support
+
+This library is written in TypeScript. All declarations are included.
 
 ## Maintainers
 
