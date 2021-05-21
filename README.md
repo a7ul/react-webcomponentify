@@ -15,6 +15,17 @@ _\* works nicely with preact aswell: See demo_
 - Demo Link: <https://a7ul.github.io/webcomponents-with-react-webcomponentify/>
 - Demo source code (recommended): <https://github.com/a7ul/webcomponents-with-react-webcomponentify>
 
+### Table of Contents
+
+- [Use cases](#use-cases)
+- [Install](#install)
+- [Usage](#usage)
+  - [Basic](#basic)
+  - [Advanced](#advanced)
+    - [Sending non string props to react](#sending-non-string-props-to-react)
+    - [What about child elements?](#what-about-child-elements)
+- [Maintainers](#maintainers)
+
 ## Use cases
 
 - **Export existing react components as web components** so you can use them with Vue or Angular.
