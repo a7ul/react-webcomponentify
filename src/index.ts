@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from "react-dom";
 import {
   renderReact2Node,
   getPropsFromNode,
@@ -80,6 +81,8 @@ const getCustomElementFromReactComponent = (
       this.observer.observe(this, { attributes: true });
     }
     disconnectedCallback() {
+      // fix bug: when the component is removed,But the event handler registered is still running.
+      ReactDOM.unmountComponentAtNode(this.targetNode);
       this.observer.disconnect();
     }
   };
