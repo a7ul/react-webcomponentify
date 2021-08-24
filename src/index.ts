@@ -81,7 +81,7 @@ const getCustomElementFromReactComponent = (
       this.observer.observe(this, { attributes: true });
     }
     disconnectedCallback() {
-      // fix bug: when the component is removed,But the event handler registered is still running.
+      // clean up React event handlers and state
       ReactDOM.unmountComponentAtNode(this.targetNode);
       this.observer.disconnect();
     }
