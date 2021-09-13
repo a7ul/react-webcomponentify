@@ -6,7 +6,7 @@
 
 **Build and export React Components as Web Components without any extra effort.**
 
-Size = ~3kb after gzip
+Size = [~1.5kB after gzip](https://bundlephobia.com/package/react-webcomponentify)
 
 _\* works nicely with preact aswell: See demo_
 
