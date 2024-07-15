@@ -1,7 +1,11 @@
 import React from 'react';
 import 'child-replace-with-polyfill';
-export declare class ReactDomChild extends React.Component {
+declare type PropsWithChildren<P = unknown> = P & {
+    children?: Node[] | undefined;
+};
+export declare class ReactDomChild extends React.Component<PropsWithChildren> {
     ref: React.RefObject<HTMLDivElement>;
     componentDidMount(): void;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
+export {};

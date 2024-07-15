@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import {
   renderReact2Node,
   getPropsFromNode,
@@ -81,8 +81,8 @@ const getCustomElementFromReactComponent = (
       this.observer.observe(this, { attributes: true });
     }
     disconnectedCallback() {
-      // clean up React event handlers and state
-      ReactDOM.unmountComponentAtNode(this.targetNode);
+      const { unmount } = createRoot(this.targetNode);
+      unmount();
       this.observer.disconnect();
     }
   };

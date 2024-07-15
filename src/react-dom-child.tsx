@@ -6,7 +6,8 @@ import createRef from 'react-create-ref';
  Wrapper class to wrap the raw html nodes in a 
  react component before passing it down to react as children
 */
-export class ReactDomChild extends React.Component {
+type PropsWithChildren<P = unknown> = P & { children?: Node[] | undefined };
+export class ReactDomChild extends React.Component<PropsWithChildren> {
   ref = createRef<HTMLDivElement>();
   componentDidMount() {
     const childNodes: Node[] = this.props.children as Node[];

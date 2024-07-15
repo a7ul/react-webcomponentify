@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import React from 'react';
 import { ReactDomChild } from './react-dom-child';
 import createRef from 'react-create-ref';
@@ -25,9 +25,17 @@ export const renderReact2Node = (
     }
   }
   const propBridgeRef = createRef<PropBridge>();
-  ReactDOM.render(<PropBridge ref={propBridgeRef} />, targetDomNode, () =>
-    onRender(propBridgeRef)
-  );
+
+  // support react 18
+  const PropBridgeWithCallback = () => {
+    React.useEffect(() => {
+      onRender(propBridgeRef);
+    }, []);
+    return <PropBridge ref={propBridgeRef} />;
+  }
+
+  createRoot(targetDomNode).render(<PropBridgeWithCallback />);
+
 };
 
 export const sendPropsToReact = (
